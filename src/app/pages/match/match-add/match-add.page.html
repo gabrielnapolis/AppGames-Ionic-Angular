@@ -1,0 +1,58 @@
+<div class="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Adicionar Partida</ion-title>
+      <ion-button (click)="goToHome()" color="tertiary"
+        ><ion-icon name="home-outline"></ion-icon
+      ></ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <form [formGroup]="matchForm" (ngSubmit)="submitForm()" novalidate>
+      <ion-item>
+        <ion-label>Jogo: </ion-label>
+        <ion-input formControlName="game" minlenght="8"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Jogador 1: </ion-label>
+        <ion-input formControlName="player1" minlength="4"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Jogador 2: </ion-label>
+        <ion-input formControlName="player2" minlength="4"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tempo partida: </ion-label>
+        <ion-input formControlName="time" max="120" min="1" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Vencedor : </ion-label>
+        <ion-input formControlName="winner"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button
+            type="submit"
+            expand="block"
+            (click)="createMatch()"
+            color="tertiary"
+            >Salvar</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </form>
+    <ion-toast
+    [isOpen]="isToastOpen"
+    message="Partida Criada!"
+    [duration]="5000"
+    (didDismiss)="setOpenToast(false)"
+  ></ion-toast>
+  </ion-content>
+</div>
+<ion-alert
+  [isOpen]="isAlertOpen"
+  header="Falha ao salvar partida, preencha os campos corretamente!"
+  message={{errorMsg}}
+  (didDismiss)="setOpen(false)"
+></ion-alert>
