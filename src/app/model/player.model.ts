@@ -3,6 +3,6 @@ export interface Player {
     nickname: string| null,
     email: string| null,
     password: string| null,
-    age: number | null,
+    age: string | null,
     name: string | null,
 }

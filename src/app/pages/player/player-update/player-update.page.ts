@@ -21,7 +21,7 @@ export class PlayerUpdatePage implements OnInit {
     nickname: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
-    age: new FormControl(0, Validators.required),
+    age: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required),
   });
 

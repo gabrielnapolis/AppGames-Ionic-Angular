@@ -8,6 +8,7 @@ import { PlayerAddPageRoutingModule } from './player-add-routing.module';
 
 import { PlayerAddPage } from './player-add.page';
 import { ReactiveFormsModule} from '@angular/forms';
+import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     IonicModule,
     PlayerAddPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IonicInputMaskModule
   ],
   exports: [PlayerAddPage],
   declarations: [PlayerAddPage]

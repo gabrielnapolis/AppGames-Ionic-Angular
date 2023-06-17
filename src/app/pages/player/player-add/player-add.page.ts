@@ -43,7 +43,7 @@ export class PlayerAddPage implements OnInit {
     nickname: '',
     email: '',
     password: '',
-    age: 0,
+    age: '',
     name: '',
   };
 
@@ -56,8 +56,9 @@ export class PlayerAddPage implements OnInit {
     this.player.email = this.playerForm.controls[`email`].value;
     this.player.password = this.playerForm.controls[`password`].value;
     this.player.name = this.playerForm.controls[`name`].value;
-    let age = this.playerForm.controls[`age`].value;
-    if (age) this.player.age = parseInt(age);
+    this.player.age = this.playerForm.controls[`age`].value;
+    //let age = this.playerForm.controls[`age`].value;
+    //if (age) this.player.age = parseInt(age);
 
     if (this.playerForm.valid) {
       this.playerService.create(this.player).subscribe(
